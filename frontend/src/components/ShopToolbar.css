@@ -1,0 +1,179 @@
+.shop-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+/* Results */
+
+.results-count {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.results-count strong {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Right Side */
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* View Controls */
+
+.view-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.view-controls > span {
+  color: var(--muted);
+
+  font-size: 10px;
+
+  margin-right: 4px;
+}
+
+.view-controls button {
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid var(--border);
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: var(--primary);
+
+  transition: 0.2s ease;
+}
+
+.view-controls button:hover,
+.view-controls button.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Sort */
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.sort-control label {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.sort-select {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.sort-select select {
+  appearance: none;
+
+  min-width: 125px;
+
+  height: 32px;
+
+  padding: 0 30px 0 12px;
+
+  border: 1px solid var(--border);
+
+  background: white;
+
+  color: var(--primary);
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.sort-select svg {
+  position: absolute;
+
+  right: 10px;
+
+  pointer-events: none;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .shop-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .toolbar-actions {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .sort-control {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .view-controls > span {
+    display: none;
+  }
+
+  .sort-control label {
+    display: none;
+  }
+
+  .sort-select select {
+    min-width: 120px;
+  }
+}
+
+/* =========================
+   DARK MODE — SHOP TOOLBAR
+========================= */
+
+[data-theme="dark"] .shop-toolbar {
+  color: #f7f5ee;
+}
+
+[data-theme="dark"] .shop-toolbar select {
+  background: #151629;
+  border-color: #292b40;
+  color: #f7f5ee;
+}
+
+[data-theme="dark"] .shop-toolbar button {
+  background: #151629;
+  border-color: #292b40;
+  color: #f7f5ee;
+}
+
+[data-theme="dark"] .shop-toolbar button.active {
+  background: #f7f5ee;
+  color: #111225;
+}

@@ -1,0 +1,234 @@
+.shop-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 24px;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.shop-product-card {
+  min-width: 0;
+}
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.shop-product-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #f1efe8;
+}
+
+.shop-product-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================
+   PRODUCT BADGE
+========================= */
+
+.product-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 10px 14px;
+  background: #ffffff;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+/* =========================
+   WISHLIST BUTTON
+========================= */
+
+.product-wishlist-button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary);
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.product-wishlist-button:hover {
+  transform: scale(1.06);
+}
+
+.product-wishlist-button.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.shop-product-info {
+  display: block;
+  padding-top: 12px;
+  text-decoration: none;
+}
+
+.shop-product-category {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.shop-product-name {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--primary);
+}
+
+.shop-product-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shop-current-price {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.shop-old-price {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+/* =========================
+   DARK MODE - SHOP PRODUCT GRID
+========================= */
+
+[data-theme="dark"] .shop-product-card {
+  color: var(--text);
+}
+
+[data-theme="dark"] .shop-product-image {
+  background: var(--surface-secondary);
+}
+
+[data-theme="dark"] .shop-product-category {
+  color: var(--muted);
+}
+
+[data-theme="dark"] .shop-product-name {
+  color: var(--text);
+}
+
+[data-theme="dark"] .shop-current-price {
+  color: var(--text);
+}
+
+[data-theme="dark"] .shop-old-price {
+  color: var(--muted);
+}
+
+[data-theme="dark"] .product-badge {
+  background: var(--surface);
+  color: var(--text);
+}
+
+[data-theme="dark"] .product-wishlist-button {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+[data-theme="dark"] .product-wishlist-button:hover {
+  background: var(--surface-secondary);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+[data-theme="dark"] .product-wishlist-button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .shop-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 18px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .shop-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 12px;
+  }
+
+  .product-badge {
+    top: 10px;
+    left: 10px;
+    padding: 7px 9px;
+    font-size: 9px;
+  }
+
+  .product-wishlist-button {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .shop-product-info {
+    padding-top: 9px;
+  }
+
+  .shop-product-category {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+
+  .shop-product-name {
+    font-size: 15px;
+    margin-bottom: 7px;
+  }
+
+  .shop-current-price {
+    font-size: 13px;
+  }
+
+  .shop-old-price {
+    font-size: 11px;
+  }
+}

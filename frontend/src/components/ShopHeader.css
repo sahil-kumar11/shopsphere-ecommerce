@@ -1,0 +1,47 @@
+.shop-header {
+  margin-bottom: 35px;
+}
+
+/* Breadcrumb */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+  margin-bottom: 22px;
+}
+
+.breadcrumb-current {
+  color: var(--primary);
+}
+
+/* Heading */
+
+.shop-header h1 {
+  font-size: 42px;
+  line-height: 1.1;
+
+  margin-bottom: 8px;
+}
+
+.product-count {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .shop-header {
+    margin-bottom: 25px;
+  }
+
+  .shop-header h1 {
+    font-size: 34px;
+  }
+}

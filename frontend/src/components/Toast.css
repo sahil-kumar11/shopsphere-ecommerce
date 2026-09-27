@@ -1,0 +1,138 @@
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  
+  min-width: 320px;
+  max-width: 460px;
+  padding: 16px 20px;
+  
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-enter {
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-exit {
+  animation: slideOut 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+}
+
+.toast-success .toast-icon {
+  color: #71834f;
+}
+
+.toast-error .toast-icon {
+  color: #d45a4a;
+}
+
+.toast-message {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.toast-message strong {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.toast-close {
+  flex-shrink: 0;
+  
+  width: 28px;
+  height: 28px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border: none;
+  border-radius: 50%;
+  background: var(--surface-secondary);
+  color: var(--muted);
+  
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.toast-close:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+@media (max-width: 600px) {
+  .toast {
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    min-width: unset;
+    max-width: unset;
+    padding: 14px 16px;
+  }
+}
+
+/* Dark mode support */
+[data-theme="dark"] .toast {
+  background: #151629;
+  border-color: #292b40;
+  color: #f7f5ee;
+}
+
+[data-theme="dark"] .toast-message strong {
+  color: #f7f5ee;
+}
+
+[data-theme="dark"] .toast-close {
+  background: #292b40;
+  color: #aaaab5;
+}
+
+[data-theme="dark"] .toast-close:hover {
+  background: #3a3c55;
+  color: #f7f5ee;
+}

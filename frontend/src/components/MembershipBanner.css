@@ -1,0 +1,119 @@
+.membership-section {
+  padding: 70px 0;
+  background: var(--secondary);
+}
+
+.membership-banner {
+  width: min(90%, 1200px);
+  min-height: 180px;
+  margin: 0 auto;
+  padding: 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.membership-label {
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.membership-content h2 {
+  font-size: 30px;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.membership-description {
+  max-width: 450px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.membership-button {
+  min-width: 170px;
+  height: 45px;
+  padding: 0 20px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.25s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.membership-button:hover {
+  background: var(--accent);
+}
+
+/* =========================
+   DARK MODE - MEMBERSHIP BANNER
+========================= */
+
+[data-theme="dark"] .membership-section {
+  background: var(--background);
+}
+
+[data-theme="dark"] .membership-banner {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .membership-content h2 {
+  color: var(--text);
+}
+
+[data-theme="dark"] .membership-description {
+  color: var(--muted);
+}
+
+[data-theme="dark"] .membership-label {
+  color: var(--accent);
+}
+
+[data-theme="dark"] .membership-button {
+  background: var(--accent);
+  color: #fff;
+}
+
+[data-theme="dark"] .membership-button:hover {
+  background: #e64a3a;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .membership-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+  }
+
+  .membership-content h2 {
+    font-size: 25px;
+  }
+
+  .membership-button {
+    width: 100%;
+  }
+}

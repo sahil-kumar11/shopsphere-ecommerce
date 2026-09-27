@@ -1,0 +1,81 @@
+.active-filters {
+  margin-bottom: 18px;
+}
+
+.filter-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Filter Chip */
+.filter-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 20px;
+  background: #f1f0eb;
+  color: var(--primary);
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-chip:hover {
+  background: #e8e6df;
+}
+
+.filter-chip svg {
+  color: var(--muted);
+}
+
+/* Clear All */
+.clear-filters {
+  border: none;
+  background: transparent;
+  padding: 0 4px;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.clear-filters:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   DARK MODE - ACTIVE FILTERS
+========================= */
+
+[data-theme="dark"] .active-filters {
+  color: var(--text);
+}
+
+[data-theme="dark"] .filter-chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+[data-theme="dark"] .filter-chip:hover {
+  background: var(--surface-secondary);
+  border-color: var(--accent);
+}
+
+[data-theme="dark"] .filter-chip svg {
+  color: var(--muted);
+}
+
+[data-theme="dark"] .clear-filters {
+  color: var(--accent);
+}
+
+[data-theme="dark"] .clear-filters:hover {
+  color: #e64a3a;
+}
